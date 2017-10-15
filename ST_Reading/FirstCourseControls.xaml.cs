@@ -82,5 +82,10 @@ namespace ST_Reading
             wordDatabase.FillWithText();
             ((FirstCourse)Owner).Test();
         }
+
+        private void sl_TimeSpan_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            ((FirstCourse)Owner).VisibleTimeSpan = (int)e.NewValue;
+        }
     }
 }

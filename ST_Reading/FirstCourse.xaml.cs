@@ -22,10 +22,12 @@ namespace ST_Reading
     {
         DispatcherTimer countDown;
         DispatcherTimer visiblePeriod;
+        public int VisibleTimeSpan { get; set; }
         FirstCourseControls firstCourseControls;
         int tick_no = 0;
         public FirstCourse()
         {
+            VisibleTimeSpan = 1000;
             InitializeComponent();
         }
 
@@ -63,7 +65,8 @@ namespace ST_Reading
             TextBlockScreen.Visibility = Visibility.Visible;
             visiblePeriod = new DispatcherTimer();
             visiblePeriod.Tick += VisiblePeriod_Tick;
-            visiblePeriod.Interval = new TimeSpan(0, 0, 1);
+            visiblePeriod.Interval = new TimeSpan(0, 0, 0, 0, VisibleTimeSpan);
+
             visiblePeriod.Start();
             tick_no = 0;
             countDown.Stop();

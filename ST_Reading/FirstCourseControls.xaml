@@ -14,6 +14,12 @@
             </StackPanel>
         </GroupBox>
         <Button Content="New Test" HorizontalAlignment="Left" Margin="63,316,0,0" VerticalAlignment="Top" Width="144" Click="Button_Click"/>
+        <GroupBox Header="Time Span" HorizontalAlignment="Left" Height="113" Margin="10,89,0,0" VerticalAlignment="Top" Width="261">
+            <StackPanel>
+                <TextBox Text="{Binding ElementName=sl_TimeSpan, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="41"/>
+                <Slider Name="sl_TimeSpan" HorizontalAlignment="Left" VerticalAlignment="Top" Minimum="100" Maximum="1000" SmallChange="50" Width="249" Height="23" ValueChanged="sl_TimeSpan_ValueChanged" />
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>
